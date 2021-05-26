@@ -1095,12 +1095,6 @@ async function genHTML() {
     </section>
     <!-- End Coaches Section -->
     
-    <!-- Insta Section -->
-    <section class="calculator-section">
-      <div class="embedsocial-hashtag" data-ref="0d012300b3a4509178646c1f3b5063fbcf82263f" ><a class="feed-powered-by-es" href="https://embedsocial.com/products/embedfeed/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
-    </section>
-    <!-- End Calculator Section -->
-    
     <!-- Testimonial Section Two -->
     <section class="testimonial-section-two">
       <div class="auto-container">
@@ -1110,6 +1104,22 @@ async function genHTML() {
         </div>
         
         <div class="testimonial-outer">
+          
+          
+          <!--Product Thumbs Carousel-->
+                  <div class="client-thumb-outer">
+                      <div class="client-thumbs-carousel owl-carousel owl-theme">
+                          <div class="thumb-item">
+                              <figure class="thumb-box"><img src="https://svg-clipart.com/svg/white/KwYrcuM-white-thumbs-up-vector.svg" alt=""></figure>
+                          </div>
+                          <div class="thumb-item">
+                              <figure class="thumb-box"><img src="https://svg-clipart.com/svg/white/KwYrcuM-white-thumbs-up-vector.svg" alt=""></figure>
+                          </div>
+                          <div class="thumb-item">
+                              <figure class="thumb-box"><img src="https://svg-clipart.com/svg/white/KwYrcuM-white-thumbs-up-vector.svg" alt=""></figure>
+                          </div>
+                      </div>
+                  </div>
           
                 <!-- Client Testimonial Carousel -->
                   <div class="client-testimonial-carousel owl-carousel owl-theme">
@@ -1161,6 +1171,12 @@ async function genHTML() {
     </section>
     <!-- End Testimonial Section -->
     
+    <!-- Insta Section -->
+    <section class="calculator-section">
+      <div class="embedsocial-hashtag" data-ref="0d012300b3a4509178646c1f3b5063fbcf82263f" ><a class="feed-powered-by-es" href="https://embedsocial.com/products/embedfeed/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
+    </section>
+    <!-- End Insta Section -->
+
     <!-- Main Footer -->
       <footer class="main-footer" style="background-image:url(https://via.placeholder.com/710x712)">
       <div class="auto-container">
