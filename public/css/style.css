@@ -2283,6 +2283,11 @@ body.visible-menu-bar .fullscreen-menu{
 
 .ui-widget.ui-widget-content{
 	border:1px solid #e0e0e0;
+	
+}
+
+.insta {
+	max-height: 10rem;
 }
 
 .ui-menu .ui-menu-item{
