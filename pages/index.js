@@ -15,8 +15,6 @@ async function genHTML() {
   // this gets the minified data
   const posts = await getPostData();
 
-  //console.log(posts)
-
   var data = {}
 
   // loads it into an object
