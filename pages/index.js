@@ -38,6 +38,15 @@ async function genHTML() {
 
   const title = data.title.value
 
+  const haveshop = data.haveshop.value
+
+  if (haveshop == "true") {
+    var shop = '<li><a href="' + data.shop.value + '">Shop</a></li>'
+  }
+  else {
+    var shop = ''
+  }
+
   const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -85,7 +94,7 @@ async function genHTML() {
                       
             <!-- Logo -->
             <div class="mobile-logo pull-left">
-              <a href="#" title=""><img src="`+ data.logosmall.value + `" alt="" title=""></a>
+              <a href="#" title=""><img src="`+ data.logosmallest.value + `" alt="" title=""></a>
             </div>
             
             <!-- Header Social Box -->
@@ -120,17 +129,7 @@ async function genHTML() {
                 <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                   <ul class="navigation clearfix">
                     <li><a href="#">Home</a></li>
-                    <li class="dropdown"><a href="#">About Us</a>
-                      <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="timetable.html">Time Table</a></li>
-                        <li><a href="commingsoon.html">Comming Soon</a></li>
-                        <li><a href="body-builder.html">Section Page 01</a></li>
-                        <li><a href="body-builder-2.html">Section Page 02</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Shop</a>
-                    </li>
+                    `+ shop + `
                     <li><a href="mailto:`+ data.email.value + `">Contact us</a></li>
                   </ul>
                 </div>
@@ -189,40 +188,8 @@ async function genHTML() {
           <nav class="full-menu">
             <ul class="navigation">
               <li><a href="#">Home</a></li>
-              <li class="dropdown"><a href="#">About Us</a>
-                <ul>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="timetable.html">Time Table</a></li>
-                  <li><a href="commingsoon.html">Comming Soon</a></li>
-                  <li><a href="body-builder.html">Section Page 01</a></li>
-                  <li><a href="body-builder-2.html">Section Page 02</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#">Trainers</a>
-                <ul>
-                  <li><a href="trainer.html">Trainer 01</a></li>
-                  <li><a href="trainer-2.html">Trainer 02</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#">Shop</a>
-                <ul>
-                  <li><a href="shop-left.html">Shop Left Sidebar</a></li>
-                  <li><a href="shop-right.html">Shop Right Sidebar</a></li>
-                  <li><a href="shop-single.html">Product Single</a></li>
-                  <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                  <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#">Blog</a>
-                <ul>
-                  <li><a href="blog.html">Our Blog</a></li>
-                  <li><a href="blog-classic.html">Blog Classic</a></li>
-                  <li><a href="blog-detail.html">Blog Detail One</a></li>
-                  <li><a href="blog-detail-two.html">Blog Detail Two</a></li>
-                  <li><a href="not-found.html">Not Found</a></li>
-                </ul>
-              </li>
-              <li><a href="contact.html">Contact us</a></li>
+              `+ shop + `
+              <li><a href="`+ data.email.value + `">Contact us</a></li>
             </ul>
           </nav>
         </div>
@@ -240,68 +207,12 @@ async function genHTML() {
             <!-- Content Boxed -->
             <div class="content-boxed">
               <div class="inner-boxed">
-                <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                <div class="btns-box">
-                  <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                </div>
+                <h1><span>KEEP YOUR BODY FIT & STRONG</span></h1>
               </div>
             </div>
           </div>
           
         </div>
-        
-        <div class="slide">
-          <div class="image-layer" style="background-image:url(`+ data.background.value + `)"></div>
-          <div class="auto-container">
-            <!-- Content Boxed -->
-            <div class="content-boxed">
-              <div class="inner-boxed">
-                <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                <div class="btns-box">
-                  <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="slide">
-          <div class="image-layer" style="background-image:url(`+ data.background.value + `)"></div>
-          <div class="auto-container">
-            <!-- Content Boxed -->
-            <div class="content-boxed">
-              <div class="inner-boxed">
-                <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                <div class="btns-box">
-                  <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="slide">
-          <div class="image-layer" style="background-image:url(`+ data.background.value + `)"></div>
-          <div class="auto-container">
-            <!-- Content Boxed -->
-            <div class="content-boxed">
-              <div class="inner-boxed">
-                <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                <div class="btns-box">
-                  <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      
       </div>
       
       <!--Scroll Dwwn Btn-->
@@ -706,52 +617,6 @@ async function genHTML() {
   
   <!--Scroll to top-->
   <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-  
-  <!-- Purchase Popup -->
-  <div id="purchase-popup" class="purchase-popup">
-    <div class="close-search theme-btn"><span>Close</span></div>
-    <div class="popup-inner">
-      <div class="overlay-layer"></div>
-      
-        <div class="purchase-form">
-        <div class="sec-title centered">
-          <h2><span>GET FREE</span> CONSULTATION</h2>
-          <div class="text">If you need of a Personal Trainer, Fitness Instructor advice, or a healthy <br> living product review, please feel free to contact us</div>
-        </div>
-            
-        <!-- Default Form -->
-        <form method="post" action="contact.html">
-          <div class="row clearfix">
-          
-            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-              <input type="text" name="name" placeholder="Name" required>
-            </div>
-            
-            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-              <input type="email" name="email" placeholder="Email" required>
-            </div>
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-              <input type="text" name="subject" placeholder="Subject" required>
-            </div>
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-              <textarea class="darma" name="message" placeholder="Your Message"></textarea>
-            </div>
-            
-            <div class="form-group text-center col-lg-12 col-md-12 col-sm-12">
-              <span class="data">* Personal data.will.value be encrypted</span>
-              <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">SEND MESSAGE</span></button>
-            </div>
-            
-          </div>
-        </form>
-        
-              
-          </div>
-          
-      </div>
-  </div>
   `+ typeform + `
   <script src="js/jquery.js"></script>
   <script src="js/popper.min.js"></script>
