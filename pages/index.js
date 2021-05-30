@@ -10,6 +10,10 @@ export default function Home({ html }) {
   )
 }
 
+function format(string) {
+  return string.replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>')
+}
+
 
 async function genHTML() {
   // this gets the minified data
@@ -70,7 +74,7 @@ async function genHTML() {
   </head>
   
   <body class="hidden-bar-wrapper">
-  
+
   <div class="page-wrapper">
      
       <!-- Preloder -->
@@ -241,13 +245,15 @@ async function genHTML() {
       </div>
     </section>
     <!-- End Testimonial Section -->
-    
+
+
+
     <!-- We Are Section -->
     <section class="we-are-section">
       <div class="auto-container">
         <div class="sec-title centered">
           <h2><span>WHO</span> We Are</h2>
-          <div class="text">`+ data.whoweare.value.replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>') + `</div>
+          <div class="text">`+ format(data.whoweare.value) + `</div>
         </div>
         
         
@@ -256,6 +262,15 @@ async function genHTML() {
     </section>
     <!-- End We Are Section -->
     
+    <!-- Hours Section -->
+    <section>
+      <div class="auto-container">
+        <h2><span>Hours</span></h2>
+        <p>`+ format(data.hours.value) + `</p>
+      </div>
+    </section>
+    <!-- End Hours Section -->
+
     <!-- Gallery Section -->
     <section class="gallery-section">
       <div class="outer-container">
