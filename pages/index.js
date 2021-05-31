@@ -76,7 +76,7 @@ async function genHTML() {
   
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
-  <script data-respect-dnt async src="https://cdn.splitbee.io/sb.js"></script>
+  
   
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -656,6 +656,7 @@ async function genHTML() {
   <script src="js/wow.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/script.js"></script>
+  <script data-respect-dnt async src="https://cdn.splitbee.io/sb.js"></script>
   
   </body>
   </html>`
