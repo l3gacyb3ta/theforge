@@ -238,7 +238,7 @@ async function genHTML() {
       
     </section>
     <!-- End Banner Section -->
-    
+    `+ data.typeform.value + `
     <!-- Testimonial Section -->
     <section class="testimonial-section">
       <div class="auto-container">
@@ -644,7 +644,6 @@ async function genHTML() {
   
   <!--Scroll to top-->
   <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-  `+ data.typeform.value + `
   <script src="js/jquery.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
