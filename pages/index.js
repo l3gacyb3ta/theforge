@@ -1,7 +1,6 @@
 import getPostData from '../lib/airtable'
 
 export default function Home({ html }) {
-  // console.log(posts)
 
   return (
     <>
@@ -10,11 +9,20 @@ export default function Home({ html }) {
   )
 }
 
+
+/**
+ * Formats a string with <br> instead of \n
+ * @param {string} string - The string you want to format with breaklines
+*/
 function format(string) {
   return string.replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>')
 }
 
 
+
+/**
+ * Generates the HTML for this page using airtable data
+*/
 async function genHTML() {
   // this gets the minified data
   const posts = await getPostData();
@@ -29,8 +37,6 @@ async function genHTML() {
   }
 
 
-
-  //console.log(data.price1.extra.split('\\'))
 
   const date = data.countdown.value
 
