@@ -24,45 +24,51 @@ function format(string) {
  * Generates the HTML for this page using airtable data
 */
 async function genHTML() {
-  // this gets the minified data
+  /**
+ * Minified airtable data.
+ * @type {object}
+ */
   const posts = await getPostData();
 
+  /**
+ * The actual, easy to get at data for the site
+ * @type {object}
+ */
   var data = {}
 
-  // loads it into an object
+  // loads raw data into an object
   for (const rec in posts) {
-    // console.log(posts[rec].fields.value)
     data[posts[rec].fields.id] = { value: posts[rec].fields.value }
     data[posts[rec].fields.id].extra = posts[rec].fields.extra
   }
 
-
-
-  const date = data.countdown.value
-
-  const logosrc = data.logosmall.value
-
-  const message = data.welcome_message.value.replace("\n", "</span>")
-
-  const typeform = data.typeform.value
-
-  const title = data.title.value
-
+  /**
+ * The string I use to determin if having a shop is something we need in the menu.
+ * @type {string}
+ */
   const haveshop = data.haveshop.value
 
   if (haveshop == "true") {
+    /**
+   * If the shop exists then, we will load in the shop link
+   * @type {string}
+   */
     var shop = '<li><a href="' + data.shop.value + '">Shop</a></li>'
   }
   else {
     var shop = ''
   }
 
+  /**
+ * The html data that is gonna be generated using Airtable data
+ * @type {string}
+ */
   const html = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>`+ title + `</title>
+  <title>`+ data.title.value + `</title>
   <!-- Stylesheets -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -638,7 +644,7 @@ async function genHTML() {
   
   <!--Scroll to top-->
   <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-  `+ typeform + `
+  `+ data.typeform.value + `
   <script src="js/jquery.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -657,6 +663,10 @@ async function genHTML() {
 }
 
 export async function getServerSideProps() {
+  /**
+ * Html from the html data generator function
+ * @type {string}
+ */
   const html = await genHTML();
 
   return {
