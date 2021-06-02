@@ -38,8 +38,10 @@ async function genHTML() {
 
   // loads raw data into an object
   for (const rec in posts) {
-    data[posts[rec].fields.id] = { value: posts[rec].fields.value }
-    data[posts[rec].fields.id].extra = posts[rec].fields.extra
+    data[posts[rec].fields.id] = { 
+      value: posts[rec].fields.value,
+      extra: posts[rec].fields.extra
+    }
   }
 
   /**
