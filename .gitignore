@@ -10,7 +10,7 @@ yarn.lock
 # testing
 /coverage
 
-yarn.lock
+*.lock
 
 # next.js
 /.next/
