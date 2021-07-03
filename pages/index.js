@@ -241,6 +241,18 @@ async function genHTML() {
       </div>
       
     </section>
+
+    <section class="we-are-section">
+      <div class="auto-container">
+        <!-- Content Boxed -->
+        <div class="content-boxed">
+          <div class="inner-boxed">
+            ` + format(data.events.value) + `
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- End Banner Section -->
     `+ data.typeform.value + `
     <!-- Testimonial Section -->
