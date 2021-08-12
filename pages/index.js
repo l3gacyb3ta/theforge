@@ -229,7 +229,7 @@ async function genHTML() {
             <!-- Content Boxed -->
             <div class="content-boxed">
               <div class="inner-boxed">
-                <h1><span>KEEP YOUR BODY FIT & STRONG</span></h1>
+                <h1><span>` + data.bigtext.value + `</span></h1>
               </div>
             </div>
           </div>
