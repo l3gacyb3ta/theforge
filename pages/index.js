@@ -148,7 +148,7 @@ async function genHTML() {
                 
                 <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                   <ul class="navigation clearfix">
-                  <li><a href=`+ data.event.extra + `>` + data.event.value + `</a></li>
+                  
                     <li><a href="#">Home</a></li>
                     `+ shop + `
                     <li><a href="mailto:`+ data.email.value + `">Contact us</a></li>
