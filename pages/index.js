@@ -152,7 +152,7 @@ async function genHTML() {
                     <li><a href="#">Home</a></li>
                     `+ shop + `
                     <li><a href="mailto:`+ data.email.value + `">Contact us</a></li>
-                    
+                    <li><a href=" https://www.gymdetails.net/crossfittheforge/">Pricing</a></li>
                   </ul>
                 </div>
               </nav>
@@ -429,67 +429,17 @@ async function genHTML() {
           <!-- Pricing Block -->
           <div class="price-block col-lg-4 col-md-4 col-sm-12 text-center">
             
-            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-            <h4>`+ data.price1.value + `</h4>
+            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1000ms">
+            <h4>Pricing</h4>
               <div class="icon-box">
                 <span class="icon"><img src="images/icons/price-1-icon.svg" alt="" /></span>
               </div>
 
-              <div class="price">`+ data.price1.extra.split('\\')[0] + `<span>` + data.price1.extra.split('\\')[2] + `</span></div>
+              <div class="price"><a href="https://www.gymdetails.net/crossfittheforge/" target="_blank"><span>PRICING</span></a></div>
 
             </div>
           </div>
           
-          <!-- Pricing Block -->
-          <div class="price-block col-lg-4 col-md-4 col-sm-12">
-          <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <h4>`+ data.price2.value + `</h4>
-              <div class="icon-box">
-                <span class="icon"><img src="images/icons/price-1-icon.svg" alt="" /></span>
-              </div>
-
-              <div class="price">`+ data.price2.extra.split('\\')[0] + `<span>` + data.price2.extra.split('\\')[2] + `</span></div>
-
-            </div>
-          </div>
-          
-          <!-- Pricing Block -->
-          <div class="price-block col-lg-4 col-md-4 col-sm-12">
-          <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <h4>`+ data.price3.value + `</h4>
-              <div class="icon-box">
-                <span class="icon"><img src="images/icons/price-1-icon.svg" alt="" /></span>
-              </div>
-
-              <div class="price">`+ data.price3.extra.split('\\')[0] + `<span>` + data.price3.extra.split('\\')[2] + `</span></div>
-
-            </div>
-          </div>
-
-          <!-- Pricing Block -->
-          <div class="price-block col-lg-4 col-md-4 col-sm-12">
-          <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <h4>`+ data.price4.value + `</h4>
-              <div class="icon-box">
-                <span class="icon"><img src="images/icons/price-1-icon.svg" alt="" /></span>
-              </div>
-
-              <div class="price">`+ data.price4.extra.split('\\')[0] + `<span>` + data.price4.extra.split('\\')[2] + `</span></div>
-
-            </div>
-          </div>
-
-          <!-- Pricing Block -->
-          <div class="price-block col-lg-4 col-md-4 col-sm-12">
-          <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <h4>`+ data.price5.value + `</h4>
-              <div class="icon-box">
-                <span class="icon"><img src="images/icons/price-1-icon.svg" alt="" /></span>
-              </div>
-              <div class="price">`+ data.price5.extra.split('\\')[0] + `<span>` + data.price5.extra.split('\\')[2] + `</span></div>
-
-            </div>
-          </div>
 
         </div>
       </div>
