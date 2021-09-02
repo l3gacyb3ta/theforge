@@ -45,14 +45,14 @@ async function genHTML() {
   }
 
   /**
- * The string I use to determin if having a shop is something we need in the menu.
+ * The string I use to determine if having a shop is something we need in the menu.
  * @type {string}
  */
   const haveshop = data.haveshop.value
 
   if (haveshop == "true") {
     /**
-   * If the shop exists then, we will load in the shop link
+   * If the shop exists then, we will load in the shop link.
    * @type {string}
    */
     var shop = '<li><a href="' + data.shop.value + '">Shop</a></li>'
@@ -62,7 +62,7 @@ async function genHTML() {
   }
 
   /**
- * The html data that is gonna be generated using Airtable data
+ * The html data that is gonna be generated using Airtable data. I am sorry for any future readers.
  * @type {string}
  */
   const html = `
@@ -152,7 +152,7 @@ async function genHTML() {
                     <li><a href="#">Home</a></li>
                     `+ shop + `
                     <li><a href="mailto:`+ data.email.value + `">Contact us</a></li>
-                    <li><a href=" https://www.gymdetails.net/crossfittheforge/">Pricing</a></li>
+                    <li><a href="https://www.gymdetails.net/crossfittheforge/" target="_blank">Pricing</a></li>
                   </ul>
                 </div>
               </nav>
