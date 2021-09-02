@@ -38,7 +38,7 @@ async function genHTML() {
 
   // loads raw data into an object
   for (const rec in posts) {
-    data[posts[rec].fields.id] = { 
+    data[posts[rec].fields.id] = {
       value: posts[rec].fields.value,
       extra: posts[rec].fields.extra
     }
@@ -212,6 +212,7 @@ async function genHTML() {
               <li><a href="#">Home</a></li>
               `+ shop + `
               <li><a href="`+ data.email.value + `">Contact us</a></li>
+              <li><a href="https://www.gymdetails.net/crossfittheforge/" target="_blank">Pricing</a></li>
             </ul>
           </nav>
         </div>
@@ -444,7 +445,7 @@ async function genHTML() {
         </div>
       </div>
     </section>
-    <!-- End Pricing Section -->
+    <!-- End Pricing Section -->s
     
     <!-- Add coaches later -->
     
