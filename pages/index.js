@@ -296,7 +296,23 @@ async function genHTML() {
     <section>
       <div class="auto-container">
         <h2><span>Hours</span></h2>
-        <p>`+ format(data.hours.value) + `</p>
+        `/*<p>`+ format(data.hours.value) + `</p> */ + `
+        <table class="table">
+          <thead>
+            <tr>
+              <th>M-F<br></th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6 AM<br>8 AM<br>10 AM<br>12 PM<br>5 PM<br>6 PM<br></td>
+              <td>9 AM<br>10 AM<br></td>
+              <td>8 AM<br>9 AM<br></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
     <!-- End Hours Section -->
