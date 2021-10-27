@@ -1,76 +1,110 @@
-import getPostData from '../lib/airtable'
+import getPostData from "../lib/airtable";
 
 export default function Home({ html }) {
-
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: html }} ></div>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </>
-  )
+  );
 }
-
 
 /**
  * Formats a string with <br> instead of \n
  * @param {string} string - The string you want to format with breaklines
-*/
+ */
 function format(string) {
-  return string.replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>').replace('\n', '<br>')
+  return string
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>")
+    .replace("\n", "<br>");
 }
-
-
 
 /**
  * Generates the HTML for this page using airtable data
-*/
+ */
 async function genHTML() {
   /**
- * Minified airtable data.
- * @type {object}
- */
+   * Minified airtable data.
+   * @type {object}
+   */
   const posts = await getPostData();
 
   /**
- * The actual, easy to get at data for the site
- * @type {object}
- */
-  var data = {}
+   * The actual, easy to get at data for the site
+   * @type {object}
+   */
+  var data = {};
 
   // loads raw data into an object
   for (const rec in posts) {
     data[posts[rec].fields.id] = {
       value: posts[rec].fields.value,
-      extra: posts[rec].fields.extra
-    }
+      extra: posts[rec].fields.extra,
+    };
   }
 
   /**
- * The string I use to determine if having a shop is something we need in the menu.
- * @type {string}
- */
-  const haveshop = data.haveshop.value
+   * The string I use to determine if having a shop is something we need in the menu.
+   * @type {string}
+   */
+  const haveshop = data.haveshop.value;
 
   if (haveshop == "true") {
     /**
-   * If the shop exists then, we will load in the shop link.
-   * @type {string}
-   */
-    var shop = '<li><a href="' + data.shop.value + '">Shop</a></li>'
-  }
-  else {
-    var shop = ''
+     * If the shop exists then, we will load in the shop link.
+     * @type {string}
+     */
+    var shop = '<li><a href="' + data.shop.value + '">Shop</a></li>';
+  } else {
+    var shop = "";
   }
 
   /**
- * The html data that is gonna be generated using Airtable data. I am sorry for any future readers.
- * @type {string}
- */
-  const html = `
+   * The html data that is gonna be generated using Airtable data. I am sorry for any future readers.
+   * @type {string}
+   */
+  const html =
+    `
   <!DOCTYPE html>
   <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>`+ data.title.value + `</title>
+  <title>` +
+    data.title.value +
+    `</title>
   <!-- Stylesheets -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -109,17 +143,23 @@ async function genHTML() {
                     
             <!-- Logo Box -->
             <div class="logo-box">
-              <div class="logo"><a href="#"><img src="`+ data.logosmall.value + `" alt="" title=""></a></div>
+              <div class="logo"><a href="#"><img src="` +
+    data.logosmall.value +
+    `" alt="" title=""></a></div>
             </div>
                       
             <!-- Logo -->
             <div class="mobile-logo pull-left">
-              <a href="#" title=""><img src="`+ data.logosmallest.value + `" alt="" title=""></a>
+              <a href="#" title=""><img src="` +
+    data.logosmallest.value +
+    `" alt="" title=""></a>
             </div>
             
             <!-- Header Social Box -->
             <div class="header-social-box clearfix">
-              <a href="`+ data.instagram.value + `" class="fa fa-instagram"></a>
+              <a href="` +
+    data.instagram.value +
+    `" class="fa fa-instagram"></a>
             </div>
             
             <div class="outer-box clearfix">
@@ -150,8 +190,13 @@ async function genHTML() {
                   <ul class="navigation clearfix">
                   
                     <li><a href="#">Home</a></li>
-                    `+ shop + `
-                    <li><a href="mailto:`+ data.email.value + `">Contact us</a></li>
+                    <li><a href="#hours">Schedule</a></li>
+                    ` +
+    shop +
+    `
+                    <li><a href="mailto:` +
+    data.email.value +
+    `">Contact us</a></li>
                     <li><a href="https://www.gymdetails.net/crossfittheforge/" target="_blank">Pricing</a></li>
                   </ul>
                 </div>
@@ -170,7 +215,9 @@ async function genHTML() {
               <div class="auto-container clearfix">
                   <!--Logo-->
                   <div class="logo pull-left">
-                      <a href="#" title=""><img height=20 src="`+ data.logosmallest.value + `" alt="" title=""></a>
+                      <a href="#" title=""><img height=20 src="` +
+    data.logosmallest.value +
+    `" alt="" title=""></a>
                   </div>
                   <!--Right Col-->
                   <div class="pull-right">
@@ -189,7 +236,9 @@ async function genHTML() {
               <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
               
               <nav class="menu-box">
-                  <div class="nav-logo"><a href="#"><img src="`+ data.logosmallest.value + `" alt="" title=""></a></div>
+                  <div class="nav-logo"><a href="#"><img src="` +
+    data.logosmallest.value +
+    `" alt="" title=""></a></div>
                   <div class="menu-outer">
           <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
               </nav>
@@ -210,8 +259,12 @@ async function genHTML() {
           <nav class="full-menu">
             <ul class="navigation">
               <li><a href="#">Home</a></li>
-              `+ shop + `
-              <li><a href="`+ data.email.value + `">Contact us</a></li>
+              ` +
+    shop +
+    `
+              <li><a href="` +
+    data.email.value +
+    `">Contact us</a></li>
               <li><a href="https://www.gymdetails.net/crossfittheforge/" target="_blank">Pricing</a></li>
             </ul>
           </nav>
@@ -225,12 +278,16 @@ async function genHTML() {
       <div class="main-slider-carousel owl-carousel owl-theme">
               
         <div class="slide">
-          <div class="image-layer" style="background-image:url(`+ data.background.value + `)"></div>
+          <div class="image-layer" style="background-image:url(` +
+    data.background.value +
+    `)"></div>
           <div class="auto-container">
             <!-- Content Boxed -->
             <div class="content-boxed">
               <div class="inner-boxed">
-                <h1><span>` + data.bigtext.value + `</span></h1>
+                <h1><span>` +
+    data.bigtext.value +
+    `</span></h1>
               </div>
             </div>
           </div>
@@ -246,7 +303,9 @@ async function genHTML() {
     </section>
 
     <!-- End Banner Section -->
-    `+ data.typeform.value + `
+    ` +
+    data.typeform.value +
+    `
     <!-- Testimonial Section -->
     <section class="testimonial-section">
       <div class="auto-container">
@@ -257,7 +316,9 @@ async function genHTML() {
           <!-- Testimonial Block -->
           <div class="testimonial-block">
             <div class="inner-box">
-              <div class="text">`+ data.testimonial.value + `</div>
+              <div class="text">` +
+    data.testimonial.value +
+    `</div>
             </div>
           </div>
             
@@ -272,7 +333,9 @@ async function genHTML() {
         <div class="content-boxed">
           <h2><span>EVENTS</span></h2>
           <div class="inner-boxed">
-            ` + format(data.events.value) + `
+            ` +
+    format(data.events.value) +
+    `
           </div>
         </div>
       </div>
@@ -283,7 +346,9 @@ async function genHTML() {
       <div class="auto-container">
         <div class="sec-title centered">
           <h2><span>WHO</span> We Are</h2>
-          <div class="text">`+ format(data.whoweare.value) + `</div>
+          <div class="text">` +
+    format(data.whoweare.value) +
+    `</div>
         </div>
         
         
@@ -293,23 +358,32 @@ async function genHTML() {
     <!-- End We Are Section -->
     
     <!-- Hours Section -->
-    <section>
+    <section id="hours">
       <div class="auto-container">
-        <h2><span>Hours</span></h2>
-        `/*<p>`+ format(data.hours.value) + `</p> */ + `
+        <h2><span>Schedule</span></h2>
+        ` /*<p>`+ format(data.hours.value) + `</p> */ +
+    `
         <table class="table">
           <thead>
             <tr>
-              <th>M-F<br></th>
-              <th>Sat</th>
-              <th>Sun</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>6 AM<br>8 AM<br>10 AM<br>12 PM<br>5 PM<br>6 PM<br></td>
-              <td>9 AM<br>10 AM<br></td>
-              <td>8 AM<br>9 AM<br></td>
+              <td>6 AM<br><br>8 AM<br><br>10 AM<br><br>12 PM<br><br>5 PM<br><br>6 PM<br></td>
+              <td>6 AM<br><br>8 AM<br><br>10 AM<br><br>12 PM<br><br>5 PM<br><br>6 PM<br></td>
+              <td>6 AM<br><br>8 AM<br><br>10 AM<br><br>12 PM<br><br>5 PM <br><br>6 PM<br></td>
+              <td>6 AM<br><br>8 AM<br><br>10 AM<br><br>12 PM<br><br>5 PM<br></td>
+              <td>6 AM<br><br>8 AM<br><br>10 AM<br><br>12 PM<br><br>4:30 PM<br><br>5:30 PM<br></td>
+              <td>9 AM<br><br>10 AM<br></td>
+              <td>9 AM<br><br>10 AM<br></td>
             </tr>
           </tbody>
         </table>
@@ -326,13 +400,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[0] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[0] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[0] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[0] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[0] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[0] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -344,13 +424,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[1] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[1] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[1] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[1] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[1] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[1] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -362,13 +448,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[2] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[2] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[2] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[2] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[2] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[2] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -380,13 +472,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[3] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[3] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[3] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[3] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[3] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[3] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -398,13 +496,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[4] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[4] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[4] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[4] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[4] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[4] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -416,13 +520,19 @@ async function genHTML() {
           <div class="gallery-block">
             <div class="inner-box">
               <div class="image">
-                <img height="100" src="`+ data.images.value.split(',')[5] + `" alt="" />
-                <a class="overlay-link" href="`+ data.images.value.split(',')[5] + `" data-fancybox="images" data-caption=""></a>
+                <img height="100" src="` +
+    data.images.value.split(",")[5] +
+    `" alt="" />
+                <a class="overlay-link" href="` +
+    data.images.value.split(",")[5] +
+    `" data-fancybox="images" data-caption=""></a>
                 <!-- Overlay Box -->
                 <div class="overlay-box">
                   <div class="overlay-inner">
                     <div class="content">
-                      <a class="plus" href="`+ data.images.value.split(',')[5] + `" data-fancybox="images" data-caption=""></a>
+                      <a class="plus" href="` +
+    data.images.value.split(",")[5] +
+    `" data-fancybox="images" data-caption=""></a>
                     </div>
                   </div>
                 </div>
@@ -436,7 +546,9 @@ async function genHTML() {
     <!-- End Gallery Section -->
     
     <!-- Pricing Section -->
-    <section class="pricing-section" style="background-image: url(`+ data.pricebackground.value + `)">
+    <section class="pricing-section" style="background-image: url(` +
+    data.pricebackground.value +
+    `)">
       <div class="auto-container">
         <div class="sec-title centered">
           <h2><span>Program</span> Pricing</h2>
@@ -461,7 +573,7 @@ async function genHTML() {
         </div>
       </div>
     </section>
-    <!-- End Pricing Section -->s
+    <!-- End Pricing Section -->
     
     <!-- Add coaches later -->
     
@@ -499,9 +611,13 @@ async function genHTML() {
                           <div class="inner-box">
                 <span class="quote-left flaticon-quote-3"></span>
                 <span class="quote-right flaticon-quote-4"></span>
-                <div class="text">"`+ data.test1.value + `”</div>
+                <div class="text">"` +
+    data.test1.value +
+    `”</div>
                 <div class="author-info">
-                  <div class="author-name">`+ data.test1.extra + `</div>
+                  <div class="author-name">` +
+    data.test1.extra +
+    `</div>
 
                 </div>
                           </div>
@@ -512,9 +628,13 @@ async function genHTML() {
                           <div class="inner-box">
                 <span class="quote-left flaticon-quote-3"></span>
                 <span class="quote-right flaticon-quote-4"></span>
-                <div class="text">"`+ data.test2.value + `”</div>
+                <div class="text">"` +
+    data.test2.value +
+    `”</div>
                 <div class="author-info">
-                  <div class="author-name">`+ data.test2.extra + `</div>
+                  <div class="author-name">` +
+    data.test2.extra +
+    `</div>
 
                 </div>
                           </div>
@@ -525,9 +645,13 @@ async function genHTML() {
                           <div class="inner-box">
                 <span class="quote-left flaticon-quote-3"></span>
                 <span class="quote-right flaticon-quote-4"></span>
-                <div class="text">"`+ data.test3.value + `”</div>
+                <div class="text">"` +
+    data.test3.value +
+    `”</div>
                 <div class="author-info">
-                  <div class="author-name">`+ data.test3.extra + `</div>
+                  <div class="author-name">` +
+    data.test3.extra +
+    `</div>
 
                 </div>
                           </div>
@@ -548,7 +672,9 @@ async function genHTML() {
     <!-- End Insta Section -->
 
     <!-- Main Footer -->
-      <footer class="main-footer" style="background-image:url(`+ data.logo.value + `)">
+      <footer class="main-footer" style="background-image:url(` +
+    data.logo.value +
+    `)">
       <div class="auto-container">
             <!-- Widgets Section -->
               <div class="widgets-section">
@@ -562,18 +688,28 @@ async function genHTML() {
                               <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                   <div class="footer-widget logo-widget">
                     <div class="logo">
-                                        <a href="#"><img src="`+ data.logosmallest.value + `" alt="" /></a>
+                                        <a href="#"><img src="` +
+    data.logosmallest.value +
+    `" alt="" /></a>
                                       </div>
                     <!-- Footer Mobile Logo -->
                     <div class="footer-mobile-logo">
-                      <a href="#"><img src="`+ data.logosmallest.value + `" alt="" title=""></a>
+                      <a href="#"><img src="` +
+    data.logosmallest.value +
+    `" alt="" title=""></a>
                     </div>
                     <ul class="info-list">
                       <li><span>Address:</span>23 Maple St, Roswell, GA, USA</li>
                       <li><span>Phone:</span>
-                      <a href="tel:1-123-456-78-89">`+ data.phone.value + `</a><br>
+                      <a href="tel:1-123-456-78-89">` +
+    data.phone.value +
+    `</a><br>
                       </li>
-                      <li><span>Email:</span><a href="mailto:`+ data.email.value + `">` + data.email.value + `</a></li>
+                      <li><span>Email:</span><a href="mailto:` +
+    data.email.value +
+    `">` +
+    data.email.value +
+    `</a></li>
                       <li class="social-links"><span>Our Socials:</span>
                         <a href="https://www.instagram.com/crossfit_theforge/" class="fa fa-instagram"></a>
                       </li>
@@ -617,7 +753,9 @@ async function genHTML() {
       
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <div class="copyright">`+ data.bottommosttext.value + `</div>
+          <div class="copyright">` +
+    data.bottommosttext.value +
+    `</div>
         </div>
       
       </div>
@@ -641,16 +779,16 @@ async function genHTML() {
   <script data-respect-dnt async src="https://cdn.splitbee.io/sb.js"></script>
   
   </body>
-  </html>`
+  </html>`;
 
-  return html
+  return html;
 }
 
 export async function getServerSideProps() {
   /**
- * Html from the html data generator function
- * @type {string}
- */
+   * Html from the html data generator function
+   * @type {string}
+   */
   const html = await genHTML();
 
   return {
