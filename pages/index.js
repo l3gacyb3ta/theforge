@@ -330,8 +330,8 @@ async function genHTML() {
     <section class="we-are-section">
       <div class="auto-container">
         <!-- Content Boxed -->
-        <div class="content-boxed">
-          <h2><span>EVENTS</span></h2>
+        <div class="content-boxed sec-title">
+          <h2>EVENTS</h2>
           <div class="inner-boxed">
             ` +
     format(data.events.value) +
@@ -405,7 +405,7 @@ async function genHTML() {
     
     
     <!-- Testimonial Section Two -->
-    <section class="testimonial-section-two">
+    <section class="testimonial-section-two pb-0">
       <div class="auto-container">
         <div class="sec-title centered">
           <h2><span>WHAT OUR</span><br>CLIENTS SAY</h2>
@@ -492,7 +492,7 @@ async function genHTML() {
     <!-- End Testimonial Section -->
     
     <!-- Insta Section -->
-    <section class="calculator-section">
+    <section class="calculator-section m-n8">
       <div class="embedsocial-hashtag" data-ref="0d012300b3a4509178646c1f3b5063fbcf82263f" ><a class="feed-powered-by-es" href="https://embedsocial.com/products/embedfeed/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
     </section>
     <!-- End Insta Section -->
