@@ -108,6 +108,7 @@ async function genHTML() {
   <!-- Stylesheets -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/owo.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
   
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
@@ -363,7 +364,7 @@ async function genHTML() {
         <h2><span>Schedule</span></h2>
         ` /*<p>`+ format(data.hours.value) + `</p> */ +
     `
-        <table class="table">
+        <table class="table table-responsive">
           <thead>
             <tr>
               <th>Monday</th>

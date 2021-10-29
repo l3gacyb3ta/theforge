@@ -1,0 +1,6 @@
+@media (max-width: 1200px) {
+    .table-responsive {
+        overflow-x: scroll !important;
+        width: 1200px;
+    }
+  }
